@@ -154,10 +154,10 @@ export class SettingsHelper {
         }
     }
 
-    public static setHideStatusBar(): void {
+    public static async setHideStatusBar(): Promise<void> {
         const workspaceConfiguration = vscode.workspace.getConfiguration();
         if (workspaceConfiguration.has("appcenter.showStatusBar")) {
-            workspaceConfiguration.update("appcenter.showStatusBar", false);
+            await workspaceConfiguration.update("appcenter.showStatusBar", false);
         }
     }
 
