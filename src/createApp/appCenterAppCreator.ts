@@ -52,7 +52,7 @@ export default class AppCenterAppCreator {
             return true;
         } catch (err) {
             const connectRepoLink: string = AppCenterUrlBuilder.GetPortalConnectRepoLink(ownerName, appName, isOrg);
-            this.logger.error(LogStrings.BuildConnectError(appName, repoUrl));
+            this.logger.error(LogStrings.BuildConnectError(appName, repoUrl), err);
 
             const messageItems: IButtonMessageItem[] = [];
             messageItems.push({
